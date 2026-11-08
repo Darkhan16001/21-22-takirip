@@ -1,0 +1,920 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #071522;
+  --surface: #14283f;
+  --surface2: #203e59;
+  --border: #45637d;
+  --white: #f5faff;
+  --muted: #b7cee2;
+  --gold: #f3c878;
+  --blue: #7eb8ff;
+  --green: #56deb3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 5% 0,
+      #244e70,
+      transparent 39%
+    ),
+    var(--bg);
+
+  min-height: 100vh;
+  color: var(--white);
+  font-family: "Manrope", Arial, sans-serif;
+  line-height: 1.85;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: filter .2s, transform .2s;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+button:active {
+  transform: scale(.985);
+}
+
+button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+a {
+  color: #b1d7ff;
+}
+
+/* ЖОҒАРҒЫ ЖОЛ */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 18px 30px;
+  background: #10243a;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+
+  border-radius: 17px;
+  background: linear-gradient(
+    135deg,
+    #ffe9b0,
+    #cd9a4e
+  );
+
+  color: #16283c;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand h1 {
+  font-size: 21px;
+}
+
+.brand p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.topic-tag {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+
+  padding: 9px 15px;
+  background: #2a4c69;
+  border-radius: 30px;
+}
+
+/* ЕКІ БАҒАН */
+
+.layout {
+  max-width: 1760px;
+  margin: auto;
+  padding: 24px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: start;
+  gap: 23px;
+}
+
+.main {
+  min-width: 0;
+}
+
+.hero {
+  padding: 34px;
+  margin-bottom: 22px;
+
+  background: linear-gradient(
+    130deg,
+    #2b5b7b,
+    #11233a
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero h2 {
+  margin: 18px 0;
+  font-size: clamp(26px, 3vw, 43px);
+  line-height: 1.38;
+}
+
+.hero p {
+  color: #d5e6f5;
+  font-size: 16px;
+}
+
+.progress-track {
+  height: 10px;
+  background: #0a1d2d;
+  border-radius: 40px;
+  margin-top: 26px;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 12.5%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #659dfb,
+    #55dcaf
+  );
+  transition: width .3s;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  color: #d7e7f8;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* МӘТІН */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  padding: 32px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  color: var(--gold);
+  font-size: clamp(23px, 2.4vw, 31px);
+  line-height: 1.4;
+  margin-bottom: 21px;
+}
+
+.card h3 {
+  color: #abd1ff;
+  font-size: 21px;
+  margin: 27px 0 13px;
+}
+
+.card p {
+  font-size: 17px;
+  color: #e6f0fd;
+  line-height: 2.05;
+  margin-bottom: 16px;
+}
+
+.card ul,
+.card ol {
+  padding-left: 27px;
+  font-size: 16px;
+}
+
+.card li {
+  margin-bottom: 12px;
+}
+
+.highlight {
+  background: #244760;
+  border-left: 5px solid var(--gold);
+  border-radius: 12px;
+  padding: 21px;
+  margin: 20px 0;
+}
+
+.notice {
+  background: #1b493c;
+  border-left: 4px solid var(--green);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* ФОТО */
+
+.figure {
+  padding: 11px;
+  background: #0b1e2e;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  margin: 23px 0;
+}
+
+.figure img {
+  width: 100%;
+  display: block;
+  max-height: 425px;
+  object-fit: contain;
+  border-radius: 11px;
+}
+
+.figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.image-fallback {
+  display: none;
+  text-align: center;
+  background: #27445f;
+  padding: 25px;
+  border-radius: 11px;
+}
+
+/* УАҚЫТ СЫЗЫҒЫ */
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.timeline-item {
+  text-align: center;
+  padding: 16px 11px;
+  background: #23435d;
+  border: 1px solid #597d9a;
+  border-radius: 12px;
+}
+
+.timeline-item strong {
+  display: block;
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.timeline-item small {
+  color: #d3e5f5;
+  font-size: 12px;
+  line-height: 1.6;
+  display: block;
+}
+
+/* КЕСТЕ ЖӘНЕ СХЕМА */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 21px 0;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 13px;
+  border: 1px solid #58778f;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+.history-table th {
+  background: #336181;
+}
+
+.history-table td {
+  background: #1d3e55;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin: 20px 0;
+}
+
+.role-item {
+  padding: 19px;
+  background: #21445f;
+  border: 1px solid #587e9a;
+  border-radius: 13px;
+}
+
+.role-item span {
+  display: block;
+  font-size: 35px;
+}
+
+.role-item strong {
+  color: var(--gold);
+  font-size: 18px;
+  display: block;
+  margin: 8px 0;
+}
+
+.role-item p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ДӘПТЕР */
+
+.notebook {
+  background: #fffaf0;
+  color: #273949;
+  border-left: 7px solid #d6a356;
+  border-radius: 15px;
+  padding: 32px;
+}
+
+.notebook-title {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  color: #765022;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.notebook h3 {
+  color: #845c27;
+  margin-top: 22px;
+}
+
+.notebook p {
+  color: #26394b;
+  font-size: 17px;
+  line-height: 2.12;
+}
+
+/* ВИДЕО */
+
+.video-panel {
+  padding: 15px;
+  margin: 22px 0;
+  background: #0c1d2e;
+  border: 1px solid #52728d;
+  border-radius: 15px;
+}
+
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 13px 0;
+}
+
+.video-buttons button,
+.video-buttons a {
+  display: inline-block;
+  border: 0;
+  background: #326cad;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.video-buttons button.active {
+  background: #b98948;
+}
+
+.video-buttons a {
+  background: #a35365;
+}
+
+.slide {
+  min-height: 285px;
+  padding: 29px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #285777,
+    #10243a
+  );
+  border: 1px solid #65839d;
+  border-radius: 13px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  animation: fadeSlide .35s ease;
+}
+
+.slide-icon {
+  font-size: 52px;
+}
+
+.slide h3 {
+  color: var(--gold);
+}
+
+.slide p {
+  max-width: 750px;
+}
+
+.slide-counter {
+  color: #c7ddf1;
+  font-size: 13px;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: .3;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ЖЕКЕ ТАПСЫРМАЛАР */
+
+.question {
+  padding: 19px;
+  margin: 15px 0;
+  background: #1f3d56;
+  border: 1px solid #52738e;
+  border-radius: 12px;
+}
+
+.question-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.question strong {
+  display: block;
+  font-size: 17px;
+}
+
+.reveal {
+  background: #356caa;
+  border: 0;
+  border-radius: 9px;
+  color: white;
+  padding: 11px 15px;
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.answer {
+  display: none;
+  padding: 16px;
+  margin-top: 12px;
+  background: #1c4b3e;
+  border-left: 4px solid var(--green);
+  border-radius: 9px;
+  font-size: 15px;
+  color: #e4fff4;
+}
+
+.answer.open {
+  display: block;
+}
+
+.writing-task {
+  padding: 20px;
+  margin: 18px 0;
+  background: #24455d;
+  border-left: 4px solid var(--blue);
+  border-radius: 12px;
+}
+
+.writing-task p {
+  font-size: 15px;
+}
+
+.student-picker {
+  padding: 20px;
+  background: #22435d;
+  margin-top: 21px;
+  border-radius: 12px;
+}
+
+.student-picker textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  background: #0b1e30;
+  color: white;
+  border: 1px solid #7290a9;
+  border-radius: 9px;
+  padding: 12px;
+  margin-top: 11px;
+}
+
+.student-picker button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 17px;
+  margin-top: 12px;
+  background: var(--gold);
+  color: #1b2e42;
+  font-weight: 800;
+}
+
+#studentResult {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+/* КОМАНДАЛАР */
+
+.teams {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.team {
+  min-width: 0;
+  border: 1px solid #55718b;
+  background: #1d3952;
+  border-radius: 14px;
+  padding: 17px;
+}
+
+.team:nth-child(1) {
+  border-top: 5px solid #77b5ff;
+}
+
+.team:nth-child(2) {
+  border-top: 5px solid #f2c579;
+}
+
+.team:nth-child(3) {
+  border-top: 5px solid #59dcb0;
+}
+
+.team h3 {
+  font-size: 18px;
+  color: var(--gold);
+  margin: 0 0 13px;
+}
+
+.team p {
+  font-size: 14px;
+}
+
+.statement {
+  padding: 12px;
+  margin: 12px 0;
+  background: #10283c;
+  border-radius: 10px;
+}
+
+.statement strong {
+  font-size: 14px;
+}
+
+.award {
+  background: #268262;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 12px;
+  margin-top: 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.award.active {
+  background: #ac8146;
+}
+
+.winner-box {
+  padding: 24px;
+  margin: 21px 0;
+  background: #1b433e;
+  border: 1px solid #579681;
+  border-radius: 15px;
+}
+
+.final-score {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 15px;
+  background: #25485b;
+  margin: 9px 0;
+  border-radius: 9px;
+}
+
+.final-score strong {
+  color: var(--gold);
+}
+
+.winner-name {
+  text-align: center;
+  color: var(--green);
+  font-size: 25px;
+  font-weight: 800;
+  margin-top: 17px;
+}
+
+/* ОҢ ЖАҚ ПАНЕЛЬ */
+
+.sidebar {
+  position: sticky;
+  top: 14px;
+  max-height: calc(100vh - 28px);
+  overflow-y: auto;
+  padding: 19px;
+  background: #152c42;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.sidebar h3 {
+  color: var(--gold);
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.side-section {
+  padding-bottom: 19px;
+  margin-bottom: 19px;
+  border-bottom: 1px solid var(--border);
+}
+
+.side-section:last-child {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.side-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.timer {
+  color: var(--gold);
+  font-size: 43px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.remaining {
+  color: #c9d9e8;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.timer-buttons button {
+  flex: 1;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 3px;
+  font-size: 11px;
+  color: white;
+  font-weight: 800;
+}
+
+.green { background: #248665; }
+.gray { background: #496581; }
+.red { background: #9b5065; }
+
+.stage-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+
+  background: #203d57;
+  border: 1px solid #4d6f88;
+  border-radius: 9px;
+  color: white;
+  text-align: left;
+
+  padding: 11px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.stage-button.active {
+  background: #3674b2;
+  border-color: #9ac4ff;
+}
+
+.stage-button small {
+  white-space: nowrap;
+  color: #d7e9f9;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px;
+  margin-bottom: 8px;
+  background: #224059;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.score-row strong {
+  color: var(--gold);
+}
+
+.reset-scores {
+  width: 100%;
+  background: transparent;
+  color: #ffd3dc;
+  border: 1px solid #a46b78;
+  border-radius: 9px;
+  padding: 11px;
+  margin-top: 8px;
+}
+
+.navigation {
+  display: grid;
+  gap: 9px;
+}
+
+.navigation button {
+  width: 100%;
+  border: 0;
+  border-radius: 9px;
+  padding: 13px;
+  font-weight: 800;
+}
+
+.previous {
+  color: white;
+  background: #365873;
+}
+
+.next {
+  color: #1b3147;
+  background: var(--gold);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 23px;
+  font-size: 12px;
+  color: #a7c0d5;
+}
+
+.footer strong {
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+/* АДАПТИВТІ ДИЗАЙН */
+
+@media (max-width: 1150px) {
+  .teams {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .topbar {
+    padding: 14px;
+  }
+
+  .topic-tag {
+    display: none;
+  }
+
+  .brand h1 {
+    font-size: 15px;
+  }
+
+  .hero, .card {
+    padding: 21px;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .notebook {
+    padding: 21px;
+  }
+
+  .card p,
+  .notebook p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .timeline,
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+}
